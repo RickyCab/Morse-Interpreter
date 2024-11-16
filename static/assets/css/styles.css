@@ -1,0 +1,24 @@
+.morse-letter {
+
+    font-weight: bold;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    transition: color 0.3s ease-in-out;
+}
+
+.morse-letter:hover {
+    color: #C70039; /* Change to another color when hovered */
+}
+
+.readonly-textarea {
+    background-color: #f0f0f0; /* Light gray background */
+    color: #555; /* Dark gray text color for contrast */
+    border: 1px solid #ccc; /* Light gray border */
+    padding: 10px;
+    font-size: 14px;
+    width: 100%;
+    height: 150px;
+    resize: none; /* Optional: prevents resizing */
+}
+
+

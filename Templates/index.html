@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Morse Code Interpreter</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <link
+      href="{{ url_for('static', filename='assets/css/styles.css') }}"
+      rel="stylesheet"
+    />
+
+</head>
+<body>
+
+        <!--Header-->
+        <div class="px-4 py-5 pb-1 text-center">
+            <img class="d-block mx-auto mb-4" src="./static/assets/img/Small Morse Code.png" alt="logo" width="72" height="57">
+            <h1 class="display-5 fw-bold text-body-emphasis">Morse Interpreter</h1>
+            <div class="col-lg-6 mx-auto">
+                 <p class="lead mb-4">
+                    <span class="morse-letter">.X</span>plore the world of Morse code, practice your encoding skills, and discover how technology brings us closer to the timeless language of communication. Try it today and start converting!
+                </p>
+            </div>
+          </div>
+
+        <!--Main Content-->
+        <form action="{{ url_for('home') }}" method="POST">
+            <div class="container border-bottom">
+                <div class="mb-3">
+                  <label for="input-text" class="form-label">Input text</label>
+                  <textarea class="form-control" id="input-text" name="input-text" rows="3">
+                      {% if cleaned %}
+                        {{ cleaned }}
+                      {% endif %}
+                  </textarea>
+                </div>
+           </div>
+
+          <div class="container border-bottom mb-3 pb-3">
+                <div class="mb-3">
+                  <label for="converted-text" class="form-label">Conversion</label>
+                  <textarea class="form-control readonly-textarea"
+                            id="converted-text" rows="3" readonly>
+                      {{ result }}
+                  </textarea>
+                </div>
+              <button type="submit" class="btn btn-success">Convert</button>
+           </div>
+        </form>
+
+
+
+
+      <!--Footer-->
+      <div class="container">
+         <footer class="py-3 my-4 border-bottom">
+            <p class="text-center text-body-secondary">© Morse Code Converter</p>
+         </footer>
+        </div>
+
+</body>
+</html>
